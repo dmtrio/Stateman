@@ -40,7 +40,6 @@ const StateMan = function(name, properties, updaters, subscriptions) {
       }
 
       function ST () {
-        // this.extendStateMan(properties, updaters, subscriptions);
         return this;
       }
 
