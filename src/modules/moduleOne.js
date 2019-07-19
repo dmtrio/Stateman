@@ -1,4 +1,4 @@
-import StateMan from "../StateMan.js";
+import StateMan from "../stateman/StateMan.js";
 
 let callCount = 0;
 

@@ -1,4 +1,4 @@
-import StateMan from "../StateMan.js";
+import StateMan from "../stateman/StateMan.js";
 
 const renders = {
   renderTitle: (state) => (`From moduleTwo: ${state.currentObj.a}`),

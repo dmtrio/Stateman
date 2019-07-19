@@ -8,8 +8,10 @@ const data = {
 
 const render = render(() => {
   return ( `
-    ${moduleOne.init(data)}
-    ${moduleTwo.init(data)}
+    <div>
+      ${moduleOne.init(data)}
+      ${moduleTwo.init(data)}
+    </div>
   `)
 });
 
