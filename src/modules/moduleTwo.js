@@ -1,13 +1,12 @@
 import StateMan from "../stateman/StateMan.js";
 
-const renders = {
-  renderTitle: (state) => (`From moduleTwo: ${state.currentObj.a}`),
+const views = {
+  title: (state) => (`From moduleTwo: ${state.currentObj.a}`),
 }
 
 const initStateManSubscriptionsModuleTwo = (subscribe) => {
   subscribe(['currentObj'], (state) => {
     return renders.renderTitle(state);
-    // return `From moduleTwo: ${state.currentObj}`;
     // console.log('p', state.currentObj, 's', state.arrayIndex);
   });
 }
@@ -16,7 +15,6 @@ var viewModelIndexUpdate = (state, action) => {
   switch (action.type) {
     case 'UPDATE_CURRENT_INDEX':
       var newIndex = Number(action.index);
-      // console.log('isSame:', state.arrayIndex === newIndex, 'vals:', state.arrayIndex, newIndex)
       if (state.arrayIndex !== newIndex) {
         state.arrayIndex = newIndex;
       }
@@ -24,7 +22,7 @@ var viewModelIndexUpdate = (state, action) => {
   }
 }
 
-function component(data) {
+function initComponent(data) {
   const el = data.el;
   const hi = new StateMan(
     'PrimaryState',
@@ -38,12 +36,13 @@ function component(data) {
   );
   console.log('initial', renders.renderTitle(hi));
 
-  return renders.renderTitle;
+  return (`
+    ${views.title(hi)}
+  `);
 };
 
-// const data = {
-//   index: 10,
-// }
-// init(data)
+const render = (data) => {
+  return initComponent(data);
+}
 
-export default {component};
+export default {render};

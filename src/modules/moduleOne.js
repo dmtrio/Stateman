@@ -2,7 +2,7 @@ import StateMan from "../stateman/StateMan.js";
 
 let callCount = 0;
 
-var initViewModelSubscriptions = (subscribe) => {
+const initViewModelSubscriptions = (subscribe) => {
   // subscribe('currentObj', (state) => {
   //   console.log('p', state.currentObj, 's', state.arrayIndex);
   // });
@@ -11,11 +11,10 @@ var initViewModelSubscriptions = (subscribe) => {
   // });
   subscribe(['currentObj', 'arrayIndex'], (state) => {
     return `${state.currentObj}, 's', ${state.arrayIndex}`;
-    // console.log('p', state.currentObj, 's', state.arrayIndex);
   });
 }
 let objs = [{a: 0}, {a: 1}, {a: 2}, {a: 3}, {a: 4}]
-var viewModelUpdate = (state, action) => {
+const viewModelUpdate = (state, action) => {
   switch (action.type) {
     case 'UPADATE_CURRENT_OBJ':
       var obj = objs[action.index];

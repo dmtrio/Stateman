@@ -4,12 +4,20 @@
   "description": "",
   "main": "StateMan.js",
   "scripts": {
+    "start": "webpack-dev-server --open --inline --debug --output-pathinfo --env.dev",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "type": "module",
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "handlebars": "^4.1.2"
+    "handlebars": "^4.1.2",
+    "webpack": "^4.36.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "babel-loader": "^8.0.6",
+    "webpack-cli": "^3.3.6",
+    "webpack-dev-server": "^3.7.2"
   }
 }
